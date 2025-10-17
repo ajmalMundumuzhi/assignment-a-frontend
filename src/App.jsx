@@ -12,7 +12,7 @@ function App() {
 
         const interval = setInterval(async () => {
             try {
-                const { data } = await axios.get(`http://localhost:3001/api/order-status/${orderId}`);
+                const { data } = await axios.get(`https://payment-api-uimy.onrender.com/api/order-status/${orderId}`);
                 if (data.status === 'SUCCESS') {
                     setPaymentStatus('SUCCESS');
                     clearInterval(interval); // Stop polling once success
@@ -29,7 +29,7 @@ function App() {
     const handlePayment = async () => {
         try {
             // 1. Call backend to create an order
-            const { data } = await axios.post('http://localhost:3001/api/create-order');
+            const { data } = await axios.post('https://payment-api-uimy.onrender.com/api/create-order');
             const { orderId: newOrderId, upiUrl } = data;
 
             setOrderId(newOrderId);
