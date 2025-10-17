@@ -1,16 +1,28 @@
-# React + Vite
+# Assignment A: UPI Payment Flow (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the UPI Payment Flow assignment, built with React and Vite.
 
-Currently, two official plugins are available:
+The user interface displays an order summary and a "Pay via UPI" button. When the user initiates a payment, the app:
+1.  Calls the backend to create an order.
+2.  Redirects the user to the generated UPI deep-link.
+3.  Continuously polls the backend to check for payment confirmation and updates the UI to a "Success" state once confirmed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack 🛠️
+-   **React**: A JavaScript library for building user interfaces.
+-   **Vite**: A fast front-end build tool.
+-   **Axios**: For making HTTP requests to the backend.
 
-## React Compiler
+## How to Run Locally 🚀
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1.  Navigate to the `assignment-a/frontend` directory.
+2.  Install the required dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+4.  Open your browser to `http://localhost:5173`.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Note:** The UPI payment flow must be tested on a **mobile device** that has UPI apps installed. Use the "Network" URL provided by Vite to access the app from your phone on the same Wi-Fi network.
